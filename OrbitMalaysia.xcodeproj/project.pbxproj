@@ -3,27 +3,63 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		500E952F24701C6C0049DAF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E952E24701C6C0049DAF3 /* AppDelegate.swift */; };
 		500E953124701C6C0049DAF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E953024701C6C0049DAF3 /* SceneDelegate.swift */; };
-		500E953324701C6C0049DAF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E953224701C6C0049DAF3 /* ViewController.swift */; };
 		500E953624701C6C0049DAF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E953424701C6C0049DAF3 /* Main.storyboard */; };
 		500E953824701C700049DAF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500E953724701C700049DAF3 /* Assets.xcassets */; };
 		500E953B24701C700049DAF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E953924701C700049DAF3 /* LaunchScreen.storyboard */; };
+		500E95432470237E0049DAF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 500E95422470237E0049DAF3 /* GoogleService-Info.plist */; };
+		507D20D624715B66005B23BE /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20D524715B66005B23BE /* RoundedViews.swift */; };
+		507D20D824715B8D005B23BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20D724715B8D005B23BE /* User.swift */; };
+		507D20DA24715BE2005B23BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20D924715BE2005B23BE /* Constants.swift */; };
+		507D20DC24715BF0005B23BE /* Firebase+Utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20DB24715BF0005B23BE /* Firebase+Utills.swift */; };
+		507D20DE24715BFD005B23BE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20DD24715BFD005B23BE /* Extensions.swift */; };
+		507D20E024715CC4005B23BE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20DF24715CC4005B23BE /* HomeVC.swift */; };
+		507D20E224715CD2005B23BE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20E124715CD2005B23BE /* LoginVC.swift */; };
+		507D20E424715D21005B23BE /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507D20E324715D21005B23BE /* LoginStoryboard.storyboard */; };
+		507D20E724717298005B23BE /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20E624717298005B23BE /* UserService.swift */; };
+		507D20E924717456005B23BE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20E824717456005B23BE /* Product.swift */; };
+		507D20EB2472BF2E005B23BE /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20EA2472BF2E005B23BE /* CheckoutVC.swift */; };
+		507D20EE2472C580005B23BE /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20EC2472C580005B23BE /* CartItemCell.swift */; };
+		507D20EF2472C580005B23BE /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507D20ED2472C580005B23BE /* CartItemCell.xib */; };
+		507D20F12472CAA2005B23BE /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20F02472CAA2005B23BE /* ProductVC.swift */; };
+		507D20F42472D2EC005B23BE /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20F32472D2EC005B23BE /* StripeCart.swift */; };
+		507D20F62473111B005B23BE /* StripeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507D20F52473111B005B23BE /* StripeApi.swift */; };
+		5BB83E8437E4C49B8447F72B /* Pods_OrbitMalaysia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A684DCD8CE7CEF621F4D31F6 /* Pods_OrbitMalaysia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		500E952B24701C6C0049DAF3 /* OrbitMalaysia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrbitMalaysia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E952E24701C6C0049DAF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		500E953024701C6C0049DAF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		500E953224701C6C0049DAF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		500E953524701C6C0049DAF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		500E953724701C700049DAF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		500E953A24701C700049DAF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		500E953C24701C700049DAF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		500E95422470237E0049DAF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		507D20D524715B66005B23BE /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		507D20D724715B8D005B23BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		507D20D924715BE2005B23BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		507D20DB24715BF0005B23BE /* Firebase+Utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Utills.swift"; sourceTree = "<group>"; };
+		507D20DD24715BFD005B23BE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		507D20DF24715CC4005B23BE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		507D20E124715CD2005B23BE /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		507D20E324715D21005B23BE /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		507D20E624717298005B23BE /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		507D20E824717456005B23BE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		507D20EA2472BF2E005B23BE /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		507D20EC2472C580005B23BE /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartItemCell.swift; path = OrbitMalaysia/View/CartItemCell.swift; sourceTree = SOURCE_ROOT; };
+		507D20ED2472C580005B23BE /* CartItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
+		507D20F02472CAA2005B23BE /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
+		507D20F32472D2EC005B23BE /* StripeCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeCart.swift; sourceTree = "<group>"; };
+		507D20F52473111B005B23BE /* StripeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeApi.swift; sourceTree = "<group>"; };
+		94E6F85F859A4D4939FA2119 /* Pods-OrbitMalaysia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrbitMalaysia.release.xcconfig"; path = "Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia.release.xcconfig"; sourceTree = "<group>"; };
+		A684DCD8CE7CEF621F4D31F6 /* Pods_OrbitMalaysia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrbitMalaysia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDCB2C182CFC5331B81BDA35 /* Pods-OrbitMalaysia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrbitMalaysia.debug.xcconfig"; path = "Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB83E8437E4C49B8447F72B /* Pods_OrbitMalaysia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +77,11 @@
 		500E952224701C6C0049DAF3 = {
 			isa = PBXGroup;
 			children = (
+				507D20CD24715ADF005B23BE /* Shared */,
 				500E952D24701C6C0049DAF3 /* OrbitMalaysia */,
 				500E952C24701C6C0049DAF3 /* Products */,
+				C4CB0A13D84F0A6AB799AE6D /* Pods */,
+				F4392A6557B6AD4FC1AA118C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +96,127 @@
 		500E952D24701C6C0049DAF3 /* OrbitMalaysia */ = {
 			isa = PBXGroup;
 			children = (
-				500E952E24701C6C0049DAF3 /* AppDelegate.swift */,
-				500E953024701C6C0049DAF3 /* SceneDelegate.swift */,
-				500E953224701C6C0049DAF3 /* ViewController.swift */,
-				500E953424701C6C0049DAF3 /* Main.storyboard */,
+				507D20F22472D2D7005B23BE /* Stripe */,
+				507D20E524717284005B23BE /* Services */,
+				507D20D424715B2A005B23BE /* Xibs */,
+				507D20D324715B24005B23BE /* View */,
+				507D20D224715B1C005B23BE /* Controller */,
+				507D20D124715B16005B23BE /* Storyboard */,
 				500E953724701C700049DAF3 /* Assets.xcassets */,
-				500E953924701C700049DAF3 /* LaunchScreen.storyboard */,
 				500E953C24701C700049DAF3 /* Info.plist */,
+				500E95422470237E0049DAF3 /* GoogleService-Info.plist */,
 			);
 			path = OrbitMalaysia;
+			sourceTree = "<group>";
+		};
+		507D20CD24715ADF005B23BE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				507D20D024715B0C005B23BE /* View */,
+				507D20CF24715AEE005B23BE /* Model */,
+				507D20CE24715AE9005B23BE /* Utills */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		507D20CE24715AE9005B23BE /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				507D20D924715BE2005B23BE /* Constants.swift */,
+				507D20DB24715BF0005B23BE /* Firebase+Utills.swift */,
+				507D20DD24715BFD005B23BE /* Extensions.swift */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
+		507D20CF24715AEE005B23BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				507D20D724715B8D005B23BE /* User.swift */,
+				507D20E824717456005B23BE /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		507D20D024715B0C005B23BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				507D20D524715B66005B23BE /* RoundedViews.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		507D20D124715B16005B23BE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				500E953924701C700049DAF3 /* LaunchScreen.storyboard */,
+				500E953424701C6C0049DAF3 /* Main.storyboard */,
+				507D20E324715D21005B23BE /* LoginStoryboard.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		507D20D224715B1C005B23BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				500E952E24701C6C0049DAF3 /* AppDelegate.swift */,
+				500E953024701C6C0049DAF3 /* SceneDelegate.swift */,
+				507D20DF24715CC4005B23BE /* HomeVC.swift */,
+				507D20E124715CD2005B23BE /* LoginVC.swift */,
+				507D20EA2472BF2E005B23BE /* CheckoutVC.swift */,
+				507D20F02472CAA2005B23BE /* ProductVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		507D20D324715B24005B23BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				507D20EC2472C580005B23BE /* CartItemCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		507D20D424715B2A005B23BE /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				507D20ED2472C580005B23BE /* CartItemCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		507D20E524717284005B23BE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				507D20E624717298005B23BE /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		507D20F22472D2D7005B23BE /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				507D20F32472D2EC005B23BE /* StripeCart.swift */,
+				507D20F52473111B005B23BE /* StripeApi.swift */,
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
+		C4CB0A13D84F0A6AB799AE6D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDCB2C182CFC5331B81BDA35 /* Pods-OrbitMalaysia.debug.xcconfig */,
+				94E6F85F859A4D4939FA2119 /* Pods-OrbitMalaysia.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F4392A6557B6AD4FC1AA118C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A684DCD8CE7CEF621F4D31F6 /* Pods_OrbitMalaysia.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 500E953F24701C700049DAF3 /* Build configuration list for PBXNativeTarget "OrbitMalaysia" */;
 			buildPhases = (
+				39DCE7A82D545204E782A612 /* [CP] Check Pods Manifest.lock */,
 				500E952724701C6C0049DAF3 /* Sources */,
 				500E952824701C6C0049DAF3 /* Frameworks */,
 				500E952924701C6C0049DAF3 /* Resources */,
+				731F977B50F05FBC6D258EB1 /* [CP] Embed Pods Frameworks */,
+				E6378EFA7CF21CD7A019995F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,21 +281,96 @@
 			buildActionMask = 2147483647;
 			files = (
 				500E953B24701C700049DAF3 /* LaunchScreen.storyboard in Resources */,
+				507D20E424715D21005B23BE /* LoginStoryboard.storyboard in Resources */,
 				500E953824701C700049DAF3 /* Assets.xcassets in Resources */,
 				500E953624701C6C0049DAF3 /* Main.storyboard in Resources */,
+				507D20EF2472C580005B23BE /* CartItemCell.xib in Resources */,
+				500E95432470237E0049DAF3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39DCE7A82D545204E782A612 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrbitMalaysia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		731F977B50F05FBC6D258EB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6378EFA7CF21CD7A019995F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrbitMalaysia/Pods-OrbitMalaysia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		500E952724701C6C0049DAF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				500E953324701C6C0049DAF3 /* ViewController.swift in Sources */,
+				507D20F42472D2EC005B23BE /* StripeCart.swift in Sources */,
+				507D20D624715B66005B23BE /* RoundedViews.swift in Sources */,
+				507D20E024715CC4005B23BE /* HomeVC.swift in Sources */,
 				500E952F24701C6C0049DAF3 /* AppDelegate.swift in Sources */,
+				507D20DE24715BFD005B23BE /* Extensions.swift in Sources */,
+				507D20EE2472C580005B23BE /* CartItemCell.swift in Sources */,
+				507D20DC24715BF0005B23BE /* Firebase+Utills.swift in Sources */,
+				507D20E924717456005B23BE /* Product.swift in Sources */,
+				507D20EB2472BF2E005B23BE /* CheckoutVC.swift in Sources */,
+				507D20F12472CAA2005B23BE /* ProductVC.swift in Sources */,
+				507D20E224715CD2005B23BE /* LoginVC.swift in Sources */,
+				507D20F62473111B005B23BE /* StripeApi.swift in Sources */,
+				507D20E724717298005B23BE /* UserService.swift in Sources */,
+				507D20D824715B8D005B23BE /* User.swift in Sources */,
 				500E953124701C6C0049DAF3 /* SceneDelegate.swift in Sources */,
+				507D20DA24715BE2005B23BE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +512,7 @@
 		};
 		500E954024701C700049DAF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDCB2C182CFC5331B81BDA35 /* Pods-OrbitMalaysia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +531,7 @@
 		};
 		500E954124701C700049DAF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94E6F85F859A4D4939FA2119 /* Pods-OrbitMalaysia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
