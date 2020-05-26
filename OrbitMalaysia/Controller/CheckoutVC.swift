@@ -10,7 +10,7 @@ import UIKit
 import Stripe
 import FirebaseFunctions
 class CheckoutVC: UIViewController, CartItemDelegate {
-    
+  
     
     //Outlet
     @IBOutlet weak var tableView: UITableView!
@@ -21,12 +21,12 @@ class CheckoutVC: UIViewController, CartItemDelegate {
     @IBOutlet weak var totalLbl: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
-    
+   
     //Variable
     var paymentContext : STPPaymentContext! //Because we need to access our payment context from multiple location in our checkoutVC, so we create a class variable for that to access all around this VC.
     
-    
+
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -100,8 +100,33 @@ class CheckoutVC: UIViewController, CartItemDelegate {
     
     
 }
+//class AuthContext: NSObject, STPAuthenticationContext {
+//
+//    var viewController: UIViewController
+//
+//    init(viewController: UIViewController) {
+//        self.viewController = viewController
+//    }
+//
+//    func authenticationPresentingViewController() -> UIViewController {
+//        return self.viewController
+//    }
+//    func authenticationContextWillDismiss(_ viewController: UIViewController) {
+//        debugPrint("authenticationContextWillDismiss")
+//
+//    }
+//    func prepare(forPresentation completion: @escaping STPVoidBlock) {
+//
+//      completion()
+//    }
+//
+//
+//}
+
 
 extension CheckoutVC: STPPaymentContextDelegate{
+   
+    
     func paymentContextDidChange(_ paymentContext: STPPaymentContext) {
         //Updating the selected payment method
         if let paymentMethod = paymentContext.selectedPaymentOption{
@@ -141,38 +166,95 @@ extension CheckoutVC: STPPaymentContextDelegate{
     //Here is where we are going to call our Cloud Function that actually sends the information to stripe
     func paymentContext(_ paymentContext: STPPaymentContext, didCreatePaymentResult paymentResult: STPPaymentResult, completion: @escaping STPPaymentStatusBlock) {
         //Step 1: call charge cloud function here
+        //
+          //      let idempotency = UUID().uuidString.replacingOccurrences(of: "-", with: "")
+        //
+        //        //create our dictionary data here
+        //        let data : [String: Any] = [
+        //            "total" : StripeCart.total,
+        //            "customerId" : UserService.user.stripeId,
+        //            "payment_method_id" : paymentResult.paymentMethod?.stripeId ?? "",
+        //            //"payment_method" : paymentResult.paymentMethod ?? "",
+        //            "idempotency" : idempotency
+        //        ]
+        //
+        //        //create function call the "makeCharge" cloud function by passing by the data and wait for the response
+        //        Functions.functions().httpsCallable("createCharge").call(data) { (result, error) in
+        //
+        //            //If error happen
+        //            if let error = error {
+        //                debugPrint(error.localizedDescription)
+        //                self.simpleAlert(title: "Error", msg: "\(error.localizedDescription)")
+        //                completion(STPPaymentStatus.error, error)
+        //                return
+        //            }
+        //
+        //            //If Payment success
+        //            StripeCart.clearCart()
+        //            self.tableView.reloadData()
+        //            self.setupPaymentInfo()
+        //            completion(.success,nil)
+        //        }
         
-        let idempotency = UUID().uuidString.replacingOccurrences(of: "-", with: "")
-        
-        //create our dictionary data here
+        //For FPX
         let data : [String: Any] = [
             "total" : StripeCart.total,
             "customerId" : UserService.user.stripeId,
-            "payment_method_id" : paymentResult.paymentMethod?.stripeId ?? "",
-            //"payment_method" : paymentResult.paymentMethod ?? "",
-            "idempotency" : idempotency
+           // "idempotency" : idempotency
+            
         ]
         
-        //create function call the "makeCharge" cloud function by passing by the data and wait for the response
-        Functions.functions().httpsCallable("createCharge").call(data) { (result, error) in
-            
+        Functions.functions().httpsCallable("createFpxCharge").call(data) { (result, error) in
             //If error happen
             if let error = error {
                 debugPrint(error.localizedDescription)
                 self.simpleAlert(title: "Error", msg: "\(error.localizedDescription)")
+                print("Cannot create Payment Intent")
                 completion(STPPaymentStatus.error, error)
                 return
             }
             
-            //If Payment success
-            StripeCart.clearCart()
-            self.tableView.reloadData()
-            self.setupPaymentInfo()
-            completion(.success,nil)
+            guard let clientSecretKey = result?.data as? String else{
+                completion(.error,nil)
+                return
+            }
+            //let authContext = AuthContext(viewController: self)
+            let paymentIntentParams = STPPaymentIntentParams(clientSecret: clientSecretKey)
+            paymentIntentParams.configure(with: paymentResult)
+            paymentIntentParams.returnURL = "payments-example://stripe-redirect"
+ 
+            
+            
+            STPPaymentHandler.shared().confirmPayment(withParams: paymentIntentParams, authenticationContext: paymentContext) { status, paymentIntent, error in
+                
+                print("Haha it here")
+               
+                
+                switch status {
+                case .succeeded:
+                    
+                    // Our example backend asynchronously fulfills the customer's order via webhook
+                    // See https://stripe.com/docs/payments/payment-intents/ios#fulfillment
+                   
+                   // print(successPaymentIntent)
+                    completion(.success, nil)
+                    print("It success")
+                case .failed:
+                    completion(.error, error)
+                    print("It fail")
+                case .canceled:
+                    completion(.userCancellation, nil)
+                    print("It canceled")
+                    
+                @unknown default:
+                    completion(.error, nil)
+                    print("It unknown error")
+                    
+                }
+            }
+            
+            
         }
-        
-        //For FPX
-        
         
         
         
@@ -212,28 +294,28 @@ extension CheckoutVC: STPPaymentContextDelegate{
     }
     
     //Function to include the delivery courier
-//    func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
-//
-//        let selfPickup = PKShippingMethod()
-//        selfPickup.amount = 0
-//        selfPickup.label = "Self Pick-up"
-//        selfPickup.detail = "Pickup hour:\nMon-Fri : 8:00AM - 6:00PM\nSat-Sun : 10:00AM - 4:00PM"
-//        selfPickup.identifier = "self_pickup"
-//
-//        let lalamove = PKShippingMethod()
-//        lalamove.amount = 8.90
-//        lalamove.label = "Lalamove"
-//        lalamove.detail = "Arrive in 1-2 days"
-//        lalamove.identifier = "lalamove"
-//
-//        if address.country == "MY" {
-//            completion(.valid, nil, [selfPickup, lalamove], lalamove)
-//        }
-//        else {
-//            completion(.invalid, nil, nil, nil)
-//        }
-//
-//    }
+    //    func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
+    //
+    //        let selfPickup = PKShippingMethod()
+    //        selfPickup.amount = 0
+    //        selfPickup.label = "Self Pick-up"
+    //        selfPickup.detail = "Pickup hour:\nMon-Fri : 8:00AM - 6:00PM\nSat-Sun : 10:00AM - 4:00PM"
+    //        selfPickup.identifier = "self_pickup"
+    //
+    //        let lalamove = PKShippingMethod()
+    //        lalamove.amount = 8.90
+    //        lalamove.label = "Lalamove"
+    //        lalamove.detail = "Arrive in 1-2 days"
+    //        lalamove.identifier = "lalamove"
+    //
+    //        if address.country == "MY" {
+    //            completion(.valid, nil, [selfPickup, lalamove], lalamove)
+    //        }
+    //        else {
+    //            completion(.invalid, nil, nil, nil)
+    //        }
+    //
+    //    }
     
     
 }
